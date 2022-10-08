@@ -18,13 +18,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         val moviesRV = findViewById<RecyclerView>(R.id.moviesRV)
         var adapter: MovieAdapter
 
         val client = AsyncHttpClient()
         client[
-                "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed",
+                "https://api.themoviedb.org/3/trending/movie/week?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed",
                 object: JsonHttpResponseHandler()
                 {
                     override fun onFailure(
@@ -47,7 +46,6 @@ class MainActivity : AppCompatActivity() {
                         moviesRV.adapter = adapter
                         moviesRV.layoutManager = LinearLayoutManager(this@MainActivity)
                     }
-
                 }
         ]
     }

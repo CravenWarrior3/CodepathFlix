@@ -8,7 +8,13 @@ class Movie (
     @SerializedName("title")
     val title: String? = null,
     @SerializedName("overview")
-    val description: String? = null
+    val description: String? = null,
+    @SerializedName("release_date")
+    val release: String? = null,
+    @SerializedName("vote_average")
+    val rating: String? = null,
+    @SerializedName("vote_count")
+    val ratingCount: String? = null
 ) {
 
 }
